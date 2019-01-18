@@ -1,0 +1,54 @@
+{
+  "name": "snapshot-diff-repro-62",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FrankAst/snapshot-diff-repro-62.git",
+  "author": "frankast <borodaev97@gmail.com>",
+  "license": "MIT",
+  "moduleRoots": [
+    "./src/"
+  ],
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-react-jsx-self": "^7.2.0",
+    "@babel/plugin-transform-react-jsx-source": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest-cli": "^23.6.0",
+    "snapshot-diff": "^0.4.2"
+  },
+  "scripts": {
+    "test": "BABEL_ENV=test yarn jest"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFiles": [
+      "<rootDir>/jestConfig/setupEnzyme.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/jestConfig/setupTestFramework.js",
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
+  }
+}
